@@ -35,10 +35,25 @@ Good luck!
 
 ## File Structure of the Project
 
-### Hangman class
+__play_game():__ \
+A function is provided which takes in a list of 6 fruits, word_list, as a parameter. An instance of the class Hangman is created and the method responsible for retrieving user input is called providing that the player has lives remaining in the game and the number of letters in the word to be guessed is non-zero. If the number of letters guessed is zero, meaning the player has successfully guessed all of the characters, the game is over and the player has won and the conditional statement is ended. If the players reaches the end of their lives before correctly guessing the word, the game is over and the player has lost and the conditional statement is also ened.
+
+
+__Hangman class__
+
 A Hangman class was created to house methods to initialise parameters for each instance of the class, request input from a user and check whether the player's guess is correct.
 
-## License information
+__Initilisation__ \
+The class is initialised with parameters with a list of words to radonmly choose from, word_list, and the number of lives, num_lives, set to five. Attributes are stated, with a random word chosen with the random module acting on the word_list. A placeholder list, word_guessed, is created to build the guessed word through player inputs. 
+
+
+__ask_letter():__ \
+This method requests a letter from the player and checks whether the guess is alphabetical and only one character long. Additionally, it checks whether the input has been passed before, by comparing the letter with elements stored within a list of previous inputs named list_letters. If either of these checks are flagged, the player is prompted to enter another guess. If the guess is an acceptable form, the letter is passed to the method check_letter()
+
+__check_letter():__ \
+This method takes the parameter of letter, the player's input guess of the Hangman word. A conditional statement is created to confirm whether the letter is within the word to be guessed, as if so, the letter is added to the empty list word_guessed at the corresponding index, as shown above. The list word_guessed is shown to the player so they can continue guessing. If the guess is not a letter in the word, the number of lives is reduced by one. In both cases, the guessed letter is appended to a list of previously guessed letters, list_letters, to flag duplicates in ask_letter() when retrieving user input.
+
+
 
 
 
@@ -47,7 +62,4 @@ A Hangman class was created to house methods to initialise parameters for each i
 
 
 An initial list is stored in the game, of which a random word is automatically picked each time. The user is asked for input of a letter, and the game checks whether the length of the input and whether it is alphabetical. The game then checks whether the letter is contained within the randomised word.
-
-
-A description of the project: what it does, the aim of the project, and what you learned
 
