@@ -44,7 +44,6 @@ class Hangman:
         self.list_of_guesses = []
         print(f"The mystery word has {self.num_letters} characters")
         print(self.word_guessed)
-        print(self.word)
         pass
 
     def check_guess(self, guess):
